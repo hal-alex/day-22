@@ -10,15 +10,19 @@
 # Detect when paddle misses
 # Keep score
 
-import turtle
-from paddle import Paddle
-screen = turtle.Screen()
+from turtle import Turtle, Screen
+screen = Screen()
 
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("Pong Game")
 
-paddle = Paddle()
+paddle = Turtle()
+paddle.penup()
+paddle.shape("square")
+paddle.color("white")
+paddle.shapesize(stretch_wid=5, stretch_len=1)
+paddle.goto(x=350, y=0)
 
 def go_up():
     new_y = paddle.ycor() + 20
