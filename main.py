@@ -11,7 +11,7 @@
 # Keep score
 
 import turtle
-
+from paddle import Paddle
 screen = turtle.Screen()
 
 screen.setup(width=800, height=600)
@@ -20,7 +20,7 @@ screen.title("Pong Game")
 
 
 
-
+Paddle()
 
 
 
