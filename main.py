@@ -18,9 +18,18 @@ screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("Pong Game")
 
+paddle = Paddle()
+
+def go_up():
+    new_y = paddle.ycor() + 20
+    paddle.goto(paddle.xcor(), new_y)
 
 
-Paddle()
+screen.listen()
+screen.onkey(go_up, "Up")
+
+screen.listen()
+screen.onkey(go_up, "Up")
 
 
 
