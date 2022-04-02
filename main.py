@@ -9,3 +9,19 @@
 # Detect collision with the paddle
 # Detect when paddle misses
 # Keep score
+
+import turtle
+
+screen = turtle.Screen()
+
+screen.setup(width=800, height=600)
+screen.bgcolor("black")
+screen.title("Pong Game")
+
+
+
+
+
+
+
+screen.exitonclick()
