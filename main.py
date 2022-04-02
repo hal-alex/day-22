@@ -11,30 +11,27 @@
 # Keep score
 
 from turtle import Turtle, Screen
+from paddle import Paddle
 screen = Screen()
 
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("Pong Game")
+screen.tracer(0)
 
-paddle = Turtle()
-paddle.penup()
-paddle.shape("square")
-paddle.color("white")
-paddle.shapesize(stretch_wid=5, stretch_len=1)
-paddle.goto(x=350, y=0)
-
-def go_up():
-    new_y = paddle.ycor() + 20
-    paddle.goto(paddle.xcor(), new_y)
-
+r_paddle = Paddle((350, 0))
+l_paddle = Paddle((-350, 0))
 
 screen.listen()
-screen.onkey(go_up, "Up")
+screen.onkey(r_paddle.go_up, "Up")
+screen.onkey(r_paddle.go_down, "Down")
 
-screen.listen()
-screen.onkey(go_up, "Up")
+screen.onkey(l_paddle.go_up, "w")
+screen.onkey(l_paddle.go_down, "s")
 
+game_is_running = True
 
+while game_is_running:
+    screen.update()
 
 screen.exitonclick()
